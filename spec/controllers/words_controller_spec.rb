@@ -24,11 +24,11 @@ RSpec.describe WordsController, type: :controller do
   # Word. As you add validations to Word, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    FactoryGirl.attributes_for(:word)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    FactoryGirl.attributes_for(:invalid_word)
   }
 
   # This should return the minimal set of values that should be in the session
@@ -68,15 +68,15 @@ RSpec.describe WordsController, type: :controller do
   end
 
   describe "POST #create" do
-    context "with valid params" do
+    context "with valid attributes" do
       it "creates a new Word" do
         expect {
-          post :create, {:word => valid_attributes}, valid_session
+          post :create, word: FactoryGirl.attributes_for(:word)
         }.to change(Word, :count).by(1)
       end
 
       it "assigns a newly created word as @word" do
-        post :create, {:word => valid_attributes}, valid_session
+        post :create, { :word => valid_attributes }, valid_session
         expect(assigns(:word)).to be_a(Word)
         expect(assigns(:word)).to be_persisted
       end
