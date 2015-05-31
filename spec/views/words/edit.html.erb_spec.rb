@@ -18,7 +18,6 @@ RSpec.describe "words/edit", type: :view do
 
       assert_select "textarea#word_description[name=?]", "word[description]"
 
-      assert_select "input#word_user_id[name=?]", "word[user_id]"
     end
   end
 end
