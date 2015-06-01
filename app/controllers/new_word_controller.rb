@@ -1,14 +1,5 @@
 class NewWordController < ApplicationController
 
-# Create form to:
-# 1. Create new word, sending params containing everything for a new word a new category
-# 2. Write controller method that:
-# => Creates a new word,
-# => Creates a new category,
-# => Saves both to the database, then pushes the new category into the new word.categories,
-# => ....unles word.categories.includes? category.
-# => word.save!
-
 	def create_word_and_category
 		@word = Word.new(word_params)
 		@category = Category.new(category_params)
