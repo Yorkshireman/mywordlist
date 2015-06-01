@@ -15,10 +15,10 @@ class NewWordController < ApplicationController
 
 		if @word.save and @category.save
 
-			@word.categories << @category
+			@word.categories << @category unless @word.categories.include?(@category)
 			@word.save
 
-			redirect_to root_path, notice: 'Word was successfully created.'
+			redirect_to words_path, notice: 'Word was successfully created.'
 		else
 			redirect_to new_word_path
 		end
@@ -26,9 +26,9 @@ class NewWordController < ApplicationController
 
 	private
     # Use callbacks to share common setup or constraints between actions.
-    def set_word
-      @word = Word.find(params[:id])
-    end
+    # def set_word
+    #   @word = Word.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def word_params

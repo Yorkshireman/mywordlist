@@ -55,9 +55,9 @@ RSpec.describe NewWordController, type: :controller do
   			expect(Word.last.categories.count).to eq(1)
   		end
 
-  		it "redirects to the root path" do 
+  		it "redirects to the words_path" do 
   			post :create_word_and_category, { :word => valid_word_attributes, :category => valid_category_attributes }, valid_session
-  			expect(response).to redirect_to(root_path)
+  			expect(response).to redirect_to(words_path)
   		end
   	end
 

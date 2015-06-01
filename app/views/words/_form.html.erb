@@ -1,29 +1,26 @@
-<%= form_for(@word) do |f| %>
-  <% if @word.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@word.errors.count, "error") %> prohibited this word from being saved:</h2>
+<%= form_tag(controller: "new_word", action: "create_word_and_category", method: "post") do %>
 
-      <ul>
-      <% @word.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <%= fields_for :word, @word do |word_form| %>
+    <div class="field">
+      <%= word_form.label(:title, "Word:") %><br>
+      <%= word_form.text_field(:title, id: "new_word") %>
+    </div>
+
+    <div class="field">
+      <%= word_form.label(:description, "Definition:") %><br>
+      <%= word_form.text_area(:description) %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title, 'Word' %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description, 'Definition' %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :categories, 'Category' %><br>
-    <%= f.text_field :categories %>
-  </div>
+  <%= fields_for :category, @category do |category_form| %>
+    <div class="field">
+      <%= category_form.label(:title, "Category:") %><br>
+      <%= category_form.text_field(:title) %>
+    </div>
+  <% end %>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag("Create") %>
   </div>
+
 <% end %>
