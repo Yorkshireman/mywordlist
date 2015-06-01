@@ -1,5 +1,17 @@
 <%= form_tag(controller: "new_word", action: "create_word_and_category", method: "post") do %>
 
+  <% if @word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@word.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @word.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= fields_for :word, @word do |word_form| %>
     <div class="field">
       <%= word_form.label(:title, "Word:") %><br>
@@ -12,11 +24,22 @@
     </div>
   <% end %>
 
+  
   <%= fields_for :category, @category do |category_form| %>
-    <div class="field">
-      <%= category_form.label(:title, "Category:") %><br>
+
+    <% if Category.count > 0 %>
+      <div class="field">
+        <%= category_form.label(:title, "Choose from existing Categories:") %><br>
+        <%= category_form.collection_select(:category_id, Category.all, :id, :title, prompt: "<select>") %>
+      </div>
+    <% end %>
+
+    <h4>OR...</h4>
+
+    <!-- <div class="field">
+      <%= category_form.label(:title, "Create and Use a New Category:") %><br>
       <%= category_form.text_field(:title) %>
-    </div>
+    </div> -->
   <% end %>
 
   <div class="actions">

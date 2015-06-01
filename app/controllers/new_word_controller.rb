@@ -2,12 +2,17 @@ class NewWordController < ApplicationController
 
 	def create_word_and_category
 		@word = Word.new(word_params)
-		@category = Category.new(category_params)
+
+		if category_params.include?(:category_id)
+			@category = Category.find(category_params[:category_id])
+		else
+			@category = Category.new(category_params)
+		end
 
 		if @word.save and @category.save
 
 			@word.categories << @category unless @word.categories.include?(@category)
-			@word.save
+			@word.save!
 
 			redirect_to words_path, notice: 'Word was successfully created.'
 		else
@@ -27,7 +32,7 @@ class NewWordController < ApplicationController
     end
 
     def category_params
-    	params.require(:category).permit(:title)
+    	params.require(:category).permit(:title, :category_id)
     end
 
 end
