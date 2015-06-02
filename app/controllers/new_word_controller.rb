@@ -3,21 +3,31 @@ class NewWordController < ApplicationController
 	def create_word_and_category
 		@word = Word.new(word_params)
 
-		if category_params.include?(:category_id)
-			@category = Category.find(category_params[:category_id])
-		else
-			@category = Category.new(category_params)
+		if @word.save
+			(params["category"])["category_ids"].each do |i|
+				next if i.to_i == 0
+				@word.categories << Category.find(i.to_i) unless @word.categories.include?(Category.find(i.to_i))
+			end
 		end
 
-		if @word.save and @category.save
+		redirect_to words_path, notice: 'Word was successfully created.'
 
-			@word.categories << @category unless @word.categories.include?(@category)
-			@word.save!
 
-			redirect_to words_path, notice: 'Word was successfully created.'
-		else
-			redirect_to new_word_path
-		end
+		# if category_params.include?(:category_id)
+		# 	@category = Category.find(category_params[:category_id])
+		# else
+		# 	@category = Category.new(category_params)
+		# end
+
+		# if @word.save and @category.save
+
+		# 	@word.categories << @category unless @word.categories.include?(@category)
+		# 	@word.save!
+
+		# 	redirect_to words_path, notice: 'Word was successfully created.'
+		# else
+		# 	redirect_to new_word_path
+		# end
 	end
 
 	private
@@ -32,7 +42,7 @@ class NewWordController < ApplicationController
     end
 
     def category_params
-    	params.require(:category).permit(:title, :category_id)
+    	params.require(:category).permit(:title, :category_ids)
     end
 
 end
