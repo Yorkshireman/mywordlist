@@ -15,7 +15,7 @@
   <%= fields_for :word, @word do |word_form| %>
     <div class="field">
       <%= word_form.label(:title, "Word:") %><br>
-      <%= word_form.text_field(:title, id: "new_word") %>
+      <%= word_form.text_field(:title, id: "new_word", required: true) %>
     </div>
 
     <div class="field">
