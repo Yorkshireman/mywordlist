@@ -4,6 +4,4 @@ class Word < ActiveRecord::Base
   has_and_belongs_to_many :categories
 
   validates :title, presence: true
-
-  #accepts_nested_attributes_for  :categories
 end

@@ -26,14 +26,6 @@
 
   
   <%= fields_for :category, @category do |category_form| %>
-
-    <!--<% if Category.count > 0 %>
-      <div class="field">
-        <%= category_form.label(:title, "Choose from existing Categories:") %><br>
-        <%= category_form.collection_select(:category_id, Category.all, :id, :title, prompt: "<select>") %>
-      </div>
-    <% end %>-->
-
     <% if Category.count > 0 %>
       <div class="field">
         <%= category_form.label(:title, "Choose from existing Categories:") %><br>
@@ -41,7 +33,7 @@
       </div>
     <% end %>
 
-    <h4>OR...</h4>
+    <h4>AND/OR...</h4>
 
     <div class="field">
       <%= category_form.label(:title, "Create and Use a New Category:") %><br>
@@ -52,5 +44,4 @@
   <div class="actions">
     <%= submit_tag("Create") %>
   </div>
-
 <% end %>
