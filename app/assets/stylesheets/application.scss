@@ -10,6 +10,19 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+$text-color: #291720;
+
+$brand-primary: #fdfdfd;
+$link-color: $text-color;
+$body-bg: white;
+$navbar-default-bg: $text-color;
+$navbar-border-radius: 0;
+
+$btn-primary-bg: $text-color;
+$btn-primary-color: $brand-primary;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "pages";

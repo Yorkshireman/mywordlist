@@ -1,3 +1,33 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar {
+		margin-bottom: 0;
+}
+
+.navbar-header {
+	.navbar-brand {
+		color: $brand-primary;
+	}
+}
+
+.page_header {
+		h1 {
+			font-weight: bold;
+			color: #42393E;
+			margin-top: 0;
+			padding: 1.1em 0;
+			text-align: center;
+		}
+}
+
+.table {
+	max-width: 730px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#new-word-button {
+	text-align: center;
+}
