@@ -12,8 +12,6 @@
  *
  */
 
-@import url(http://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Didact+Gothic);
-
 $font-family-sans-serif: 'Didact Gothic', sans-serif;
 $headings-font-family: 'Poiret One', sans-serif;
 
@@ -38,4 +36,5 @@ $table-bg: white;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Didact+Gothic);
 @import "pages";
