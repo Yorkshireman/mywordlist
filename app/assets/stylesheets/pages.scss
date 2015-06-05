@@ -9,16 +9,18 @@
 .navbar-header {
 	.navbar-brand {
 		color: $brand-primary;
+		font-family: 'Indie Flower', sans-serif;
+		font-weight: bold;
+		font-size: 1.9em;
 	}
 }
 
 .page_header {
+	background-color: #FFFAFF;	
+	text-align: center;
 		h1 {
-			font-weight: bold;
-			color: #42393E;
 			margin-top: 0;
-			padding: 1.1em 0;
-			text-align: center;
+			padding: 0.5em 0;
 		}
 }
 
@@ -30,4 +32,8 @@
 
 #new-word-button {
 	text-align: center;
+}
+
+th {
+	color: $navbar-default-bg;
 }

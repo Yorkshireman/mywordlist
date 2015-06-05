@@ -12,16 +12,24 @@
  *
  */
 
-$text-color: #291720;
+@import url(http://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Didact+Gothic);
+
+$font-family-sans-serif: 'Didact Gothic', sans-serif;
+$headings-font-family: 'Poiret One', sans-serif;
+
+$text-color: #12061C;
 
 $brand-primary: #fdfdfd;
-$link-color: $text-color;
-$body-bg: white;
-$navbar-default-bg: $text-color;
+
+$body-bg: #FAFAFF;
+$navbar-default-bg: #7824B8;
+$link-color: $navbar-default-bg;
 $navbar-border-radius: 0;
 
-$btn-primary-bg: $text-color;
+$btn-primary-bg: #6822AD;
 $btn-primary-color: $brand-primary;
+
+$table-bg: white;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
