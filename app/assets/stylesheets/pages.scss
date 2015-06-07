@@ -9,6 +9,7 @@
 .navbar-header {
 	.navbar-brand {
 		color: $brand-primary;
+		&:hover { color: darken($brand-primary, 10%); }
 		font-family: 'Indie Flower', sans-serif;
 		font-weight: bold;
 		font-size: 1.9em;
