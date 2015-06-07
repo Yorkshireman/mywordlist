@@ -11,8 +11,11 @@
         MyWordList
       <% end %>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
-      
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+      </ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
