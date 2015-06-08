@@ -1,0 +1,16 @@
+<tr>
+	<td><%= word.title %></td>
+	<td><%= word.description %></td>
+	<td>
+	  <% word.categories.each do |category| %>
+	    <a class="btn btn-info btn-sm", role="button">
+	      <%= category.title %>
+	    </a>
+	  <% end %>
+	</td>
+	<td>
+	  <%= link_to word, method: :delete, data: { confirm: 'Are you sure?' } do %>
+	    <span class="glyphicon glyphicon-remove"></span>
+	  <% end %>
+	</td>
+</tr>

@@ -2,12 +2,17 @@
 
   <div class="col-xs-3">
     <div id="new-word-button">
-      <%= link_to 'New Word', new_word_path, class: "btn btn-primary btn-lg" %>
+      <%= link_to 'New Word', new_word_path, class: "btn btn-primary btn-lg", remote: true %>
     </div>
+
+    <div id="new_word_form" style="display:none;"></div>
   </div>
 
+
   <div class="col-xs-9">
+    
     <div class="table-responsive">
+      
       <table class="table">
         <thead>
           <tr>
@@ -19,27 +24,13 @@
         </thead>
 
         <tbody>
-          <% current_user.word_list.words.each do |word| %>
-            <tr>
-              <td><%= word.title %></td>
-              <td><%= word.description %></td>
-              <td>
-                <% word.categories.each do |category| %>
-                  <a class="btn btn-info btn-sm", role="button">
-                    <%= category.title %>
-                  </a>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to word, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span class="glyphicon glyphicon-remove"></span>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
+          <div id="words"><%= render @words %></div>
         </tbody>
       </table>
+
     </div>
+    
   </div>
+
   
 </div>
