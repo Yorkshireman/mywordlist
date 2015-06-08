@@ -4,13 +4,15 @@ class NewWordController < ApplicationController
 		@word = current_user.word_list.words.build(word_params)
 
 		if @word.save
-			(params["category"])["category_ids"].each do |i|
-				next if i.to_i == 0
-				@word.categories << Category.find(i.to_i) unless @word.categories.include?(Category.find(i.to_i))
+			if params["category"].include?(:category_ids)
+				(params["category"])["category_ids"].each do |i|
+					next if i.to_i == 0
+					@word.categories << Category.find(i.to_i) unless @word.categories.include?(Category.find(i.to_i))
+				end
 			end
 
 			if category_params.include?(:title) && ((params["category"])["title"]) != ""
-				@word.categories << Category.new(title: (params["category"])["title"])
+				@word.categories << current_user.word_list.categories.build(title: (params["category"])["title"])
 			end
 		end
 

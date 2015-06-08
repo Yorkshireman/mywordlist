@@ -30,11 +30,21 @@ before_filter :configure_account_update_params, only: [:update]
   # DELETE /resource
   def destroy
     super
+
     @word_list = resource.word_list
 
-    if resource.delete 
+    if resource.delete
+      @word_list.categories.each do |category|
+        category.destroy
+      end
+
+      @word_list.words.each do |word|
+        word.destroy
+      end
+
       @word_list.destroy
     end
+
   end
 
   # GET /resource/cancel
