@@ -26,10 +26,10 @@
 
   
   <%= fields_for :category, @category do |category_form| %>
-    <% if Category.count > 0 %>
+    <% if current_user.word_list.categories.count > 0 %>
       <div class="field">
         <%= category_form.label(:title, "Choose from existing Categories:") %><br>
-        <%= category_form.collection_check_boxes(:category_ids, Category.all, :id, :title) %>
+        <%= category_form.collection_check_boxes(:category_ids, current_user.word_list.categories.all, :id, :title) %>
       </div>
     <% end %>
 

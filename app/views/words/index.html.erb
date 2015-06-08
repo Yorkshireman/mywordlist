@@ -19,7 +19,7 @@
         </thead>
 
         <tbody>
-          <% @words.each do |word| %>
+          <% current_user.word_list.words.each do |word| %>
             <tr>
               <td><%= word.title %></td>
               <td><%= word.description %></td>

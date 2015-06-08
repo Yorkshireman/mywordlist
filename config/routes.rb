@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'words#index'
+  root 'pages#home'
 
   post 'create_word_and_category' => 'new_word#create_word_and_category'
 
