@@ -1,7 +1,7 @@
 class NewWordController < ApplicationController
 
 	def create_word_and_category
-		@word = Word.new(word_params)
+		@word = current_user.word_list.words.build(word_params)
 
 		if @word.save
 			(params["category"])["category_ids"].each do |i|

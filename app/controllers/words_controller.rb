@@ -14,7 +14,7 @@ class WordsController < ApplicationController
 
   # GET /words/new
   def new
-    @word = Word.new
+    @word = current_user.word_list.words.build
   end
 
   # GET /words/1/edit

@@ -31,6 +31,7 @@ before_filter :configure_account_update_params, only: [:update]
   def destroy
     super
     @word_list = resource.word_list
+
     if resource.delete 
       @word_list.destroy
     end
