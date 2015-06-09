@@ -33,6 +33,13 @@ body {
 	max-width: 730px;
 	margin-left: auto;
 	margin-right: auto;
+	td:nth-child(2) {
+		// font-weight: bold;
+		color: $btn-info-bg;
+	}
+	th {
+	color: $navbar-default-bg;
+	}
 }
 
 #new-word-button {
@@ -45,8 +52,4 @@ body {
 
 .glyphicon-remove {
 	color: $brand-danger;
-}
-
-th {
-	color: $navbar-default-bg;
 }

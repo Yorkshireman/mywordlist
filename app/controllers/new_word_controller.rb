@@ -17,7 +17,7 @@ class NewWordController < ApplicationController
 		end
 
 		if @word.save
-			redirect_to words_path, notice: 'Word was successfully created.'
+			redirect_to words_path
 		else
 			redirect_to new_word_path, notice: 'A valid word was not submitted.'
 		end
