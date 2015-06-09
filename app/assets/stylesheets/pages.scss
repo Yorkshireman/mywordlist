@@ -49,15 +49,11 @@ body {
 	margin-right: auto;
 	td:nth-child(2) {
 		// font-weight: bold;
-		color: $btn-info-bg;
+		color: lighten($btn-info-bg, 5%);
 	}
 	th {
 	color: $navbar-default-bg;
 	}
-}
-
-#new-word-button {
-	text-align: center;
 }
 
 .btn-info {

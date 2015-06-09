@@ -1,13 +1,11 @@
 class WordsController < ApplicationController
   before_action :set_word, only: [:show, :edit, :update, :destroy]
-  before_action :all_words, only: [:index, :create]
-  respond_to :html, :js
 
   # GET /words
   # GET /words.json
-  # def index
-  #   @words = Word.all
-  # end
+  def index
+    @words = Word.all
+  end
 
   # GET /words/1
   # GET /words/1.json
@@ -64,11 +62,6 @@ class WordsController < ApplicationController
   end
 
   private
-
-    def all_words
-      @words = current_user.word_list.words
-    end
-
     # Use callbacks to share common setup or constraints between actions.
     def set_word
       @word = Word.find(params[:id])
