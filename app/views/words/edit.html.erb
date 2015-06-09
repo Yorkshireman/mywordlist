@@ -1,12 +1,5 @@
 <h1>Edit Word</h1>
 
-<div>
-	<% @word.categories.each do |category| %>
-		<%= category.title %>
-	<% end %>
-</div>
-
 <%= render 'edit_word_form' %>
-
-<%= link_to 'Show', @word %> |
-<%= link_to 'Back', words_path %>
+<br>
+<%= link_to 'Back', words_path, class: "btn btn-default" %>
