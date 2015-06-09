@@ -40,9 +40,26 @@ class WordsController < ApplicationController
   # PATCH/PUT /words/1
   # PATCH/PUT /words/1.json
   def update
+    #need to first remove categories from the word
+    @word.categories.each do |category|
+      @word.categories.delete category
+    end
+
+    #then push categories in from the category_params
+    if params["category"].include?(:category_ids)
+      (params["category"])["category_ids"].each do |i|
+        next if i.to_i == 0
+        @word.categories << Category.find(i.to_i) unless @word.categories.include?(Category.find(i.to_i))
+      end
+    end
+
+    if category_params.include?(:title) && ((params["category"])["title"]) != ""
+      @word.categories << current_user.word_list.categories.build(title: (params["category"])["title"])
+    end
+
     respond_to do |format|
       if @word.update(word_params)
-        format.html { redirect_to @word, notice: 'Word was successfully updated.' }
+        format.html { redirect_to words_path, notice: 'Word was successfully updated.' }
         format.json { render :show, status: :ok, location: @word }
       else
         format.html { render :edit }
@@ -70,5 +87,9 @@ class WordsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def word_params
       params.require(:word).permit(:title, :description, :category_ids)
+    end
+
+    def category_params
+      params.require(:category).permit(:title, :category_ids, :category_id)
     end
 end

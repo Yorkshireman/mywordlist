@@ -47,6 +47,13 @@ body {
 	max-width: 730px;
 	margin-left: auto;
 	margin-right: auto;
+	td:first-child a {
+		color: $text-color;
+		&:hover { color: darken($text-color, 10%); }
+		span {
+			color: $link-color;
+		}
+	}
 	td:nth-child(2) {
 		// font-weight: bold;
 		color: lighten($btn-info-bg, 5%);

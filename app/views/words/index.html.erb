@@ -42,7 +42,12 @@
         <tbody>
           <% current_user.word_list.words.each do |word| %>
             <tr>
-              <td><%= word.title %></td>
+              <td>
+                <%= link_to edit_word_path(word) do %>
+                  <%= word.title %>
+                  <span class="glyphicon glyphicon-pencil"></span>
+                <% end %>
+              </td>
               <td><%= word.description %></td>
               <td>
                 <% word.categories.each do |category| %>

@@ -1,0 +1,37 @@
+<%= form_for(@word) do %>
+
+  <%= fields_for :word, @word do |word_form| %>
+    <div class="field form-group">
+      <%= word_form.label(:title, "Word:") %><br>
+      <%= word_form.text_field(:title, id: "new_word", required: true, autofocus: true, class: "form-control") %>
+    </div>
+
+    <div class="field form-group">
+      <%= word_form.label(:description, "Definition:") %><br>
+      <%= word_form.text_area(:description, class: "form-control") %>
+    </div>
+  <% end %>
+
+  
+  <%= fields_for :category, @category do |category_form| %>
+    <% if current_user.word_list.categories.count > 0 %>
+      <div class="field form-group">
+        <%= category_form.label(:title, "Choose from existing Categories:") %><br>
+        <%= category_form.collection_check_boxes(:category_ids, current_user.word_list.categories.all, :id, :title) do |b| %>
+          <%= b.label(class: "checkbox-inline") { b.check_box + b.text } %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <h4>AND/OR...</h4>
+
+    <div class="field form-group">
+      <%= category_form.label(:title, "Create and Use a New Category:") %><br>
+      <%= category_form.text_field(:title, class: "form-control") %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= submit_tag("Update!", class: "btn btn-block btn-primary btn-lg") %>
+  </div>
+<% end %>
