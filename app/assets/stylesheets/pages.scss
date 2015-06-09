@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+footer {
+	background-color: #FFFAFF;
+	.navbar-brand {
+		font-family: 'Indie Flower', sans-serif;
+		font-weight: bold;
+		color: lighten($link-color, 15%);
+		&:hover { color: $link-color; }
+	}
+}
+
 .navbar {
 		margin-bottom: 0;
 }
@@ -31,6 +41,7 @@
 }
 
 body {
+	padding-bottom: 60px;
 	padding-top: 50px;
 }
 
@@ -41,6 +52,19 @@ body {
 			margin-top: 0;
 			padding: 0.5em 0;
 		}
+}
+
+.jumbotron {
+	font-family: $font-family-sans-serif;
+	text-align: center;
+	a {
+		position: relative;
+		bottom: 0.25em;
+		font-weight: bold;
+		span {
+			margin-left: 2%;
+		}
+	}
 }
 
 .table {
