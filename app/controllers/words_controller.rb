@@ -6,6 +6,7 @@ class WordsController < ApplicationController
   # GET /words.json
   def index
     @words = Word.all
+    @quotes = Quote.all
   end
 
   # GET /words/1

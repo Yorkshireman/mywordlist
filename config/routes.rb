@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :quotes
   resources :categories
   resources :words
   devise_for :users, controllers: { registrations: "users/registrations" }
