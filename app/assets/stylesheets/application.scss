@@ -35,6 +35,10 @@ $btn-info-color: $brand-primary;
 
 $table-bg: white;
 
+.center-button {
+	text-align: center;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Didact+Gothic);

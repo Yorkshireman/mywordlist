@@ -3,30 +3,27 @@
     <h1>Manage Categories</h1>
   </div>
 
-  <div id="create_category_btn_parent_div">
-    <%= link_to 'Create a New Category', new_category_path, class: "btn btn-default clearfix" %>
+  <div class="center-button" id="create_category_btn_parent_div">
+    <%= link_to 'Create a New Category', new_category_path, class: "btn btn-default" %>
   </div>
   
-  <div class="table-responsive">
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th colspan="2"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @categories.alphabetical_order_asc.each do |category| %>
-          <tr>
-            <td><%= category.title %></td>
-            <td><%= link_to 'Edit', edit_category_path(category) %></td>
-            <td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure? This will delete the category and remove it from all words that contain it.' } %></td>
-          </tr>
+  <ul class="list-group">
+    <% @categories.alphabetical_order_asc.each do |category| %>
+      <li class="list-group-item">
+        <%= category.title %>
+        <%= link_to edit_category_path(category), class: "btn btn-default btn-sm" do %>
+          Edit <span class="glyphicon glyphicon-pencil"></span>
         <% end %>
-      </tbody>
-    </table>
+        <%= link_to category, method: :delete, data: { confirm: 'Are you sure? This will delete the category and remove it from all words that contain it.' }, class: "btn btn-danger btn-sm" do %>
+          Delete <span class="glyphicon glyphicon-trash"></span>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 
+  <div class="center-button">
+    <%= link_to words_path, class: "btn btn-default" do %>
+      Back <span class="glyphicon glyphicon-hand-left"></span>
+    <% end %>
   </div>
 </div>

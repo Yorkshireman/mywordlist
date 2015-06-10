@@ -107,7 +107,30 @@ body {
 
 .manage_categories {
 	#create_category_btn_parent_div {
-		text-align: center;
 		margin-bottom: 0.75em;
+	}
+	ul {
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+		a:nth-child(2) {
+			position: absolute;
+			right: 7px;
+			bottom: 6.5px;
+		}
+		a:first-child {
+			position: absolute;
+			right: 87px;
+			bottom: 6.5px;
+		}
+	}
+	li {
+		color: $navbar-default-bg;
+		font-size: 1.2em;
+	}
+	.center-button:last-child {
+		span {
+			margin-left: 3px;
+		}
 	}
 }
