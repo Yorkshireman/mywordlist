@@ -5,5 +5,7 @@ class Word < ActiveRecord::Base
   has_and_belongs_to_many :categories
 
   validates :title, presence: true
+
+  scope :alphabetical_order_asc, -> { order("title ASC") }
   
 end
