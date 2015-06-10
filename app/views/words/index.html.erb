@@ -3,13 +3,15 @@
     <h1>My Word List</h1>
   </div>
 
-  <div id="quote">
-    <h3>
-      <% quote = Quote.find(rand(1..5)) %>
-      "<%= quote.content %>"
-    </h3>
-    <h4>~ <%= quote.author %></h4>
-  </div>
+  <% if Quote.all.count > 0 %>
+    <div id="quote">
+      <h3>
+        <% quote = Quote.find(rand(1..5)) %>
+        "<%= quote.content %>"
+      </h3>
+      <h4>~ <%= quote.author %></h4>
+    </div>
+  <% end %>
 
   <div class="row">
 
