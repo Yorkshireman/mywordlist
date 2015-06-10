@@ -4,7 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def admin?
-  	current_user.admin
+  	unless user_signed_in? && current_user.admin
+  		redirect_to root_path, alert: 'You must be an admin to do this (naughty you).'
+  	end
   end
 
 end
