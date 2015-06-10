@@ -6,7 +6,8 @@
   <% if Quote.all.count > 0 %>
     <div id="quote">
       <h3>
-        <% quote = Quote.find(rand(1..5)) %>
+        <% n = Quote.all.count %>
+        <% quote = Quote.find(rand(1..n)) %>
         "<%= quote.content %>"
       </h3>
       <h4>~ <%= quote.author %></h4>
