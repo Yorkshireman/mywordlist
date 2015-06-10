@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="page_header">
+	<h1>Quote</h1>
+</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @quote.content %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @quote.author %>
-</p>
-
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>
+<div class="container show_quote quote">
+	<h3>"<%= @quote.content %>"</h3>
+	<h4>~ <%= @quote.author %></h4>
+	<br>
+	<%= link_to 'Edit', edit_quote_path(@quote), class: "btn btn-default" %>
+	<%= link_to 'Add Another', new_quote_path, class: "btn btn-primary" %>
+	<%= link_to 'Quotes', quotes_path, class: "btn btn-default" %>
+</div>

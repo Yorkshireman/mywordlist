@@ -74,7 +74,7 @@ body {
 	}
 }
 
-#quote {
+.quote {
 	text-align: center;
 	margin-bottom: 1.75em;
 }
@@ -143,4 +143,50 @@ body {
 
 .edit_word {
 	max-width: 600px;
+}
+
+/*************************************************
+		NEW QUOTE PAGE
+*************************************************/
+
+.new_quote {
+	max-width: 600px;
+}
+
+/*************************************************
+		SHOW QUOTE PAGE
+*************************************************/
+
+.quote_page {
+	max-width: 600px;
+}
+
+/*************************************************
+		EDIT QUOTE PAGE
+*************************************************/
+
+.edit_quote {
+	max-width: 600px;
+	text-align: center;
+}
+
+/*************************************************
+		QUOTES PAGE
+*************************************************/
+
+.quotes_page {
+	max-width: 600px;
+}
+
+#quote_content {
+	background-color: yellow;
+	max-width: 66%;
+}
+
+#quote_actions {
+	background-color: blue;
+	position: absolute;
+	top: 0;
+	right: 1%;
+	bottom: 0;
 }

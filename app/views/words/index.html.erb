@@ -5,7 +5,7 @@
 <div class="container">
 
   <% if Quote.all.count > 0 %>
-    <div id="quote">
+    <div class="quote">
       <h3>
         <% n = Quote.all.count %>
         <% quote = Quote.find(rand(1..n)) %>
