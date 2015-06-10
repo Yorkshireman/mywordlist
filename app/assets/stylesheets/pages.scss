@@ -107,7 +107,13 @@ body {
 	color: $brand-danger;
 }
 
+
+/*************************************************
+		MANAGE CATEGORIES PAGE
+*************************************************/
+
 .manage_categories {
+	margin-top: 0.85em;
 	#create_category_btn_parent_div {
 		margin-bottom: 0.75em;
 	}
@@ -175,18 +181,35 @@ body {
 *************************************************/
 
 .quotes_page {
-	max-width: 600px;
+	.center-button {
+		margin-top: 1.5em;
+	}
+	ul {
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+		a:last-child {
+			position: absolute;
+			top: -5px;
+			right: -10px;
+		}
+		a:nth-child(1) {
+			position: absolute;
+			top: -5px;
+			right: 68px;
+		}
+	}
 }
 
-#quote_content {
-	background-color: yellow;
-	max-width: 66%;
-}
+// #quote_content {
+// 	background-color: yellow;
+// 	max-width: 66%;
+// }
 
-#quote_actions {
-	background-color: blue;
-	position: absolute;
-	top: 0;
-	right: 1%;
-	bottom: 0;
-}
+// #quote_actions {
+// 	background-color: blue;
+// 	position: absolute;
+// 	top: 0;
+// 	right: 1%;
+// 	bottom: 0;
+// }

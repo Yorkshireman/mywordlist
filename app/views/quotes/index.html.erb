@@ -1,22 +1,26 @@
 <div class="page_header">  
   <h1>Quotes</h1>
 </div>
-<br>
-<div class="center-button">
-  <%= link_to new_quote_path, class: "btn btn-default" do %>
-    New Quote <span class="glyphicon glyphicon-thumbs-up"></span>
-  <% end %>
-</div>
-<br>
+
+
 <div class="container quotes_page">
+
+  <div class="center-button">
+    <%= link_to new_quote_path, class: "btn btn-primary" do %>
+      New Quote <span class="glyphicon glyphicon-thumbs-up"></span>
+    <% end %>
+  </div>
+
+  <br>
+
   <ul class="list-group">
     <% @quotes.each do |quote| %>
-      <li class="list-group-item">
-        <div id="quote_content">
+      <li class="list-group-item row">
+        <div class="col-xs-7">
           <%= quote.content %>
         </div>
         
-        <div id="quote_actions" class="pull-right">
+        <div class="col-xs-5">
           <%= link_to edit_quote_path(quote), class: "btn btn-default btn-sm" do %>
             Edit <span class="glyphicon glyphicon-pencil"></span>
           <% end %>
@@ -27,4 +31,5 @@
       </li>
     <% end %>
   </ul>
+
 </div>
