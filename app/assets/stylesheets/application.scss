@@ -30,7 +30,7 @@ $navbar-border-radius: 0;
 $btn-primary-bg: #6822AD;
 $btn-primary-color: $brand-primary;
 
-$btn-info-bg: #2D163E;
+$btn-info-bg: lighten(#2D163E, 20%);
 $btn-info-color: $brand-primary;
 
 $table-bg: white;

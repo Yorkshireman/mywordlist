@@ -89,7 +89,7 @@ body {
 	}
 	td:nth-child(2) {
 		// font-weight: bold;
-		color: lighten($btn-info-bg, 5%);
+		color: darken($btn-info-bg, 10%);
 	}
 	th {
 	color: $navbar-default-bg;
