@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   post 'create_word_and_category' => 'new_word#create_word_and_category'
-  post 'update_word_and_category' => 'new_word#update_word_and_category'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
