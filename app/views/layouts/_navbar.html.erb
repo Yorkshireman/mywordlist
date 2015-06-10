@@ -36,6 +36,13 @@
             <% end %>
           </li>
         <% end %>
+        <% if admin? %>
+          <li>
+            <%= link_to new_quote_path do %>
+              Go on, add another quote <span class="glyphicon glyphicon-thumbs-up"></span>
+            <% end %>
+          </li>
+        <% end %>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
