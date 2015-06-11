@@ -44,6 +44,15 @@
           </li>
         <% end %>
       </ul>
+      <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to "http://dictionary.cambridge.org/dictionary/learner-english/", target: "_blank" do %>
+              Cambridge Online Learners Dictionary <span class="glyphicon glyphicon-hand-right"></span>
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
