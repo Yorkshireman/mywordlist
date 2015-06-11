@@ -65,7 +65,7 @@
                     <span class="glyphicon glyphicon-pencil"></span>
                   <% end %>
                 </td>
-                <td><%= word.description %></td>
+                <td><%= simple_format(word.description) %></td>
                 <td>
                   <% word.categories.alphabetical_order_asc.each do |category| %>
                     <a class="btn btn-info btn-sm", role="button">
