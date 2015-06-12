@@ -14,7 +14,7 @@
   <br>
 
   <ul class="list-group">
-    <% @quotes.each do |quote| %>
+    <% @quotes.order_by_creation_date.each do |quote| %>
       <li class="list-group-item row">
         <div class="col-xs-7">
           <%= quote.content %>

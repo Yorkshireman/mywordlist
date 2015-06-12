@@ -7,11 +7,9 @@
   <% if Quote.all.count > 0 %>
     <div class="quote">
       <h3>
-        <% n = Quote.all.count %>
-        <% quote = Quote.find(rand(1..n)) %>
-        "<%= quote.content %>"
+        "<%= Quote.order("RANDOM()").first.content %>"
       </h3>
-      <h4>~ <%= quote.author %></h4>
+      <h4>~ <%= Quote.order("RANDOM()").first.author %></h4>
     </div>
   <% end %>
 
