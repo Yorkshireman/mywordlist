@@ -80,14 +80,20 @@ body {
 }
 
 .table {
-	max-width: 730px;
 	margin-left: auto;
 	margin-right: auto;
-	td:first-child a {
-		color: $text-color;
-		&:hover { color: darken($text-color, 10%); }
+	td:first-child {
+		white-space: nowrap;
 		span {
-			color: $link-color;
+			font-size: 0.9em;
+			margin-left: 2px;
+		}
+		a {
+			color: $text-color;
+			&:hover { color: darken($text-color, 10%); }
+			span {
+				color: $link-color;
+			}
 		}
 	}
 	td:nth-child(2) {
@@ -95,7 +101,16 @@ body {
 		color: darken($btn-info-bg, 10%);
 	}
 	th {
-	color: $navbar-default-bg;
+		padding-top: 0 !important;
+		color: $navbar-default-bg;
+	}
+}
+
+.categories_container {
+	width: 20%;
+	max-width: 146px;
+	a { 
+		margin: 2px 0;
 	}
 }
 
