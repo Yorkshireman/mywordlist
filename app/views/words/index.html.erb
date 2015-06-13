@@ -55,28 +55,7 @@
           </thead>
 
           <tbody>
-            <% current_user.word_list.words.alphabetical_order_asc.each do |word| %>
-              <tr>
-                <td>
-                  <%= link_to edit_word_path(word) do %>
-                    <%= word.title %> <span class="glyphicon glyphicon-pencil"></span>
-                  <% end %>
-                </td>
-                <td><%= simple_format(word.description) %></td>
-                <td class="categories_container">
-                  <% word.categories.alphabetical_order_asc.each do |category| %>
-                    <a class="btn btn-info btn-sm", role="button">
-                      <%= category.title %>
-                    </a>
-                  <% end %>
-                </td>
-                <td>
-                  <%= link_to word, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-remove"></span>
-                  <% end %>
-                </td>
-              </tr>
-            <% end %>
+            <%= render('layouts/all_categories') %>
           </tbody>
         </table>
       </div>
