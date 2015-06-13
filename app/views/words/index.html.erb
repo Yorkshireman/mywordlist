@@ -22,10 +22,6 @@
         Add a Word!
       </button>
 
-      <% current_user.word_list.categories.each do |category| %>
-        <%= link_to category.title, fetch_words_path(category_id: category.id), remote: true %><br>
-      <% end %>
-
       <!-- Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
