@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   post 'create_word_and_category' => 'new_word#create_word_and_category'
 
+  get "/fetch_words" => 'words#from_category', as: 'fetch_words'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

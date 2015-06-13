@@ -22,6 +22,10 @@
         Add a Word!
       </button>
 
+      <% Category.all.each do |category| %>
+        <%= link_to category.title, fetch_words_path(:category_id => category.id), :remote => true %><br>
+      <% end %>
+
       <!-- Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -43,6 +47,7 @@
     </div>
 
     <div class="col-md-10">
+    <%= render partial: 'words_grid', locals: { words: @words } %>
       <div class="table">
         <table class="table">
           <thead>
