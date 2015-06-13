@@ -81,7 +81,12 @@ class WordsController < ApplicationController
   # DELETE /words/1
   # DELETE /words/1.json
   def destroy
+    @word.categories.each do |category|
+      category.destroy unless ( current_user.word_list.words.joins(:categories).where(categories: {id: category.id}).count ) > 1
+    end
+
     @word.destroy
+
     respond_to do |format|
       format.html { redirect_to words_url, notice: 'Word was successfully destroyed.' }
       format.json { head :no_content }
