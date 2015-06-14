@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th>
-        Word <%= link_to "Show All", words_path, class: "btn btn-sm btn-info", id: "show-all-button" %>
+        Word <%= link_to "Show All", all_words_path, class: "btn btn-sm btn-info", id: "show-all-button", remote: true %>
       </th>
       <th>Definition</th>
       <th>Categories</th>
