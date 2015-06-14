@@ -14,7 +14,6 @@
   <% end %>
 
   <div class="row">
-
     <div class="col-md-2">
       <!-- Button trigger modal -->
       <p class="text-muted">Make your WordList more awesome...</p>
@@ -22,30 +21,14 @@
         Add a Word!
       </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h3 class="modal-title" id="myModalLabel">New Word</h3>
-            </div>
-            <div class="modal-body">
-              <%= render 'form' %>           
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Go Back</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render('layouts/modal') %>
       <br>
     </div>
 
     <div class="col-md-10">
+      <%= render partial: 'layouts/all_categories' %>
       <%= render partial: 'words_grid', locals: { words: @words } %>
-    </div>
-    
+    </div> 
   </div>
 
 </div>
