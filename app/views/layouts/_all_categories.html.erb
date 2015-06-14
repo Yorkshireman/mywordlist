@@ -21,9 +21,7 @@
         <td><%= simple_format(word.description) %></td>
         <td class="categories_container">
           <% word.categories.alphabetical_order_asc.each do |category| %>
-            <a class="btn btn-info btn-sm", role="button">
-              <%= category.title %>
-            </a>
+            <%= link_to category.title, fetch_words_path(category_id: category.id), remote: true, class: "btn btn-info btn-sm", role: "button" %>
           <% end %>
         </td>
         <td>
