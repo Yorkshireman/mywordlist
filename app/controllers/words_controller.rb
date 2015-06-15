@@ -10,12 +10,6 @@ class WordsController < ApplicationController
     end
   end
 
-  def all_words
-    respond_to do |format|
-      format.js
-    end
-  end
-
   # GET /words
   # GET /words.json
   def index

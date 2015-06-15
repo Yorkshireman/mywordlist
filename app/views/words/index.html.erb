@@ -3,7 +3,6 @@
 </div>
 
 <div class="container">
-
   <% if Quote.all.count > 0 %>
     <div class="quote">
       <h3>
@@ -26,7 +25,8 @@
     </div>
 
     <div class="col-md-10">
-      <%= render('layouts/all_categories') %>
+      <button class="btn btn-sm btn-info", id="show-all-words-button">Show All Words</button>
+      <%= render('layouts/all_words') %>
       <%= render partial: 'words_grid', locals: { words: @words } %>
     </div> 
   </div>

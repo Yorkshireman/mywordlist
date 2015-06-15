@@ -21,3 +21,15 @@ window.setTimeout(function() {
         $(this).remove(); 
     });
 }, 5000);
+
+$(function () {
+  $('#show-all-words-button').click(function () {
+  	if( $("#all_words").css('display') == 'none') {
+			$("#all_words").css({'display':'block'});
+		}
+		
+		if( $("#words_grid").css('display') == 'block') {
+			$("#words_grid").css({'display':'none'});
+		}
+  })
+});
