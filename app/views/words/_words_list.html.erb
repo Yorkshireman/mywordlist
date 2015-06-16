@@ -11,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% words.each do |word| %>
+    <% words.alphabetical_order_asc.each do |word| %>
 			<tr>
 				<td>
 		      <%= link_to edit_word_path(word) do %>
