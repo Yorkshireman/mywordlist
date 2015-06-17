@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :word_lists
   resources :quotes
   resources :categories
   resources :words
@@ -13,8 +14,8 @@ Rails.application.routes.draw do
 
   post 'create_word_and_category' => 'new_word#create_word_and_category'
 
-  get "/fetch_words" => 'words#from_category', as: 'fetch_words'
-  get "/all_words" => 'words#all_words', as: 'all_words'
+  get "/fetch_words" => 'word_lists#from_category', as: 'fetch_words'
+  get "/all_words" => 'word_lists#all_words', as: 'all_words'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

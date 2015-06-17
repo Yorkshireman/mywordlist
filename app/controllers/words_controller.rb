@@ -3,19 +3,6 @@ class WordsController < ApplicationController
   before_action :authenticate_user!
 
 
-  def from_category
-    @selected = current_user.word_list.words.joins(:categories).where( categories: {id: (params[:category_id])} )
-    respond_to do |format|
-      format.js
-    end
-  end
-
-  def all_words
-    respond_to do |format|
-      format.js
-    end
-  end
-
   # GET /words
   # GET /words.json
   def index

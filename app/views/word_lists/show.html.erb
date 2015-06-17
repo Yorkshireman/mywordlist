@@ -1,0 +1,34 @@
+<div class="page_header">
+  <h1>My Word List</h1>
+</div>
+
+<div class="container">
+
+  <% if Quote.all.count > 0 %>
+    <div class="quote">
+      <h3>
+        "<%= Quote.order("RANDOM()").first.content %>"
+      </h3>
+      <h4>~ <%= Quote.order("RANDOM()").first.author %></h4>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-2">
+      <!-- Button trigger modal -->
+      <p class="text-muted">Make your WordList more awesome...</p>
+      <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">
+        Add a Word!
+      </button>
+
+      <%= render('layouts/modal') %>
+      <br>
+    </div>
+
+    <div class="col-md-10">
+      <%= render('layouts/all_categories') %>
+      <%= render partial: 'words_grid', locals: { words: @words } %>
+    </div> 
+  </div>
+
+</div>
