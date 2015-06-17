@@ -25,6 +25,7 @@ class WordListsController < ApplicationController
   # GET /word_lists/1.json
   def show
     @words = Word.all
+    @word_list = WordList.find(params[:id])
   end
 
   # GET /word_lists/new

@@ -2,8 +2,10 @@
   <thead>
     <tr>
       <th>
-      	<!-- Instead of all_words_path ajax, because table re-renders strangely. This refreshes the page, which means the table always renders properly. Not ideal, but haven't fixed the bug yet. -->
-      	Word <%= link_to "Show All", words_path, class: "btn btn-sm btn-info", id: "show-all-button" %>
+      	<!-- Instead of all_words_path ajax, because table re-renders strangely. This refreshes the page, which means the table always renders properly. Not ideal, but haven't fixed the bug yet. 
+
+      	Only renders CURRENT_USER word_list. How to make it render the current wordlist? That way it would be generic for whatever wordlist you're looking at. -->
+      	Word <%= link_to "Show All", word_list_path(current_user.word_list.id), class: "btn btn-sm btn-info", id: "show-all-button" %>
       </th>
       <th>Definition</th>
       <th>Categories</th>
