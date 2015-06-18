@@ -9,7 +9,7 @@
 			<h3>"I have, but it's been a while!"</h3>
 			<h1>
 				Blah Blah!
-				<%= link_to words_path, class: "btn btn-primary btn-lg" do %>
+				<%= link_to current_user.word_list, class: "btn btn-primary btn-lg" do %>
 					Go to My WordList
 					<span class="glyphicon glyphicon-thumbs-up"></span>
 				<% end %>
