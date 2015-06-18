@@ -43,6 +43,8 @@ class WordsController < ApplicationController
   # PATCH/PUT /words/1
   # PATCH/PUT /words/1.json
   def update
+    @word_list = current_user.word_list
+
     #need to first remove categories from the word
     @word.categories.each do |category|
       @word.categories.delete category
@@ -57,16 +59,16 @@ class WordsController < ApplicationController
     end
 
     if category_params.include?(:title) && ((params["category"])["title"]) != ""
-      @word.categories << current_user.word_list.categories.build(title: (params["category"])["title"])
+      @word.categories << @word_list.categories.build(title: (params["category"])["title"])
     end
 
     respond_to do |format|
       if @word.update(word_params)
-        format.html { redirect_to words_path, notice: 'Word was successfully updated.' }
-        format.json { render :show, status: :ok, location: @word }
+        format.html { redirect_to @word_list, notice: 'Word was successfully updated.' }
+        #format.json { render :show, status: :ok, location: @word }
       else
         format.html { render :edit }
-        format.json { render json: @word.errors, status: :unprocessable_entity }
+        #format.json { render json: @word.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -74,14 +76,16 @@ class WordsController < ApplicationController
   # DELETE /words/1
   # DELETE /words/1.json
   def destroy
+    @word_list = current_user.word_list
+
     @word.categories.each do |category|
-      category.destroy unless ( current_user.word_list.words.joins(:categories).where(categories: {id: category.id}).count ) > 1
+      category.destroy unless ( @word_list.words.joins(:categories).where(categories: {id: category.id}).count ) > 1
     end
 
     @word.destroy
 
     respond_to do |format|
-      format.html { redirect_to words_url, notice: 'Word was successfully destroyed.' }
+      format.html { redirect_to @word_list, notice: 'Word was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

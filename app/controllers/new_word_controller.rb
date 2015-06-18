@@ -2,6 +2,7 @@ class NewWordController < ApplicationController
 
 	def create_word_and_category
 		@word = current_user.word_list.words.build(word_params)
+		@word_list = current_user.word_list
 
 		if @word.save
 			if params["category"].include?(:category_ids)
@@ -17,7 +18,7 @@ class NewWordController < ApplicationController
 		end
 
 		if @word.save
-			redirect_to words_path, notice: 'Word was successfully created.'
+			redirect_to @word_list, notice: 'Word was successfully created.'
 		else
 			redirect_to new_word_path, notice: 'A valid word was not submitted.'
 		end
