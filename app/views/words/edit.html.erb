@@ -5,5 +5,5 @@
 <div class="container edit_word">
 	<%= render 'edit_word_form' %>
 	<br>
-	<%= link_to 'Back', words_path, class: "btn btn-default" %>
+	<%= link_to 'Back', current_user.word_list, class: "btn btn-default" %>
 </div>
