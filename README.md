@@ -1,4 +1,5 @@
 == README
+
 This app is still very much in progress (so many of the features in the description have not been implemented yet), and I may well re-write entirely, after finishing Makers Academy, due to it not having been built using TDD; plus it would probably benefit from being re-written, to get DRY'd up and just be written following better practices generally.
 
 
