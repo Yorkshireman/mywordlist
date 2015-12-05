@@ -1,8 +1,12 @@
 == README
 
-This app is still very much in progress (so many of the features in the description have not been implemented yet), and I may well re-write entirely, after finishing Makers Academy, due to it not having been built using TDD; plus it would probably benefit from being re-written, to get DRY'd up and just be written following better practices generally.
+This app is still in progress and, in fact, I will likely re-write it entirely, using my post-Makers Academy skills.
 
-To run this locally:
+Technologies used include Rails, Sass and Bootstrap. User Authentication uses the Devise gem.
+
+It is hosted on Heroku [here](https://fathomless-stream-7071.herokuapp.com/)
+
+If you want to run this locally:
 - Install Ruby
 - `git clone git@github.com:Yorkshireman/mywordlist.git`
 - `bundle`
